@@ -1,0 +1,23 @@
+<h1><%= @post.title %></h1>
+
+<p>
+  <%= @post.body %>
+</p>
+
+<h2>Comments</h2>
+<%= render @post.comments %>
+
+<h3>Add a comment</h3>
+<%= form_with(model: [ @post, Comment.new ], local: true) do |form| %>
+  <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

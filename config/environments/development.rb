@@ -79,4 +79,7 @@ Rails.application.configure do
   config.hosts << "localhost:3000"
 
   config.action_cable.allowed_request_origins = ["https://#{pf_host}", "http://localhost:3000"]
+
+  # Adjust default_url_options to match request's base URL
+  config.action_controller.default_url_options = { host: "opulent-pancake-wr7p96jr7gw39jww-3000.app.github.dev", protocol: 'https' }
 end
